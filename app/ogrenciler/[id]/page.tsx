@@ -1,11 +1,13 @@
 // app/ogrenciler/[id]/page.tsx
 import Link from "next/link";
 
-// Sayfanın statik değil, istek geldiğinde sunucuda dinamik çalışacağını belirtiyoruz:
-export const dynamic = "force-dynamic";
-
 interface PageProps {
   params: Promise<{ id: string }>;
+}
+
+// Next.js build sırasında örnek parametreleri önceden bildiriyoruz
+export async function generateStaticParams() {
+  return [{ id: "1" }, { id: "nuray" }];
 }
 
 export default async function StudentDetailPage({ params }: PageProps) {
