@@ -1,6 +1,9 @@
 // app/ogrenciler/[id]/page.tsx
 import Link from "next/link";
 
+// Sayfanın statik değil, istek geldiğinde sunucuda dinamik çalışacağını belirtiyoruz:
+export const dynamic = "force-dynamic";
+
 interface PageProps {
   params: Promise<{ id: string }>;
 }
